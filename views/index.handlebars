@@ -1,0 +1,24 @@
+<link rel="stylesheet" href='/assets/css/reset.css'/>
+<link rel="stylesheet" href='/assets/css/style.css'/>
+
+<div class="container">
+    <ul>
+        {{#each data}}
+            {{#unless devoured}}
+                <li class="not-devoured">
+                    <h1>{{burger_name}}</h1>
+                    <button data-id={{id}}>DEVOUR</button>
+                </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+    <ul>
+        {{#each data}}
+            {{#if devoured}}
+                <li class="devoured">
+                    <h1>{{burger_name}}</h1>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>

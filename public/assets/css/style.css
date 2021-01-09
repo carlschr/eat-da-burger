@@ -8,8 +8,8 @@
 .brand-name {
     font-size: 5rem;
     text-align: center;
-    background: rgb(236, 233, 191);
-    border: 1px rgb(236, 233, 191) solid;
+    background: white;
+    border: 1px white solid;
     box-shadow: 2px 2px 5px 5px;
     width: 40%;
     margin: 2rem auto;
@@ -29,7 +29,7 @@ form {
     margin: 2rem;
 }
 
-input {
+.burger-input {
     flex: 1;
     max-width: 40%;
     text-align: center;
@@ -40,19 +40,29 @@ input {
     transition: box-shadow .5s;
 }
 
-input:focus {
-    outline: none;
-    box-shadow: 1px 1px 5px black;
+.burger-submit {
+    font-size: 1.2rem;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 200;
+    background: whitesmoke;
+    color: black;
+    border: black 1.5px solid;
+    margin-left: .5rem;
+    box-shadow: 1px 1px 5px grey;
+    transition: box-shadow .5s;
+    letter-spacing: 0;
 }
 
 .container {
     display: flex;
     border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .container>* {
     flex-grow: 1;
     max-width: 50%;
+    padding: 3rem 0;
 }
 
 .notdevoured-container {
@@ -77,6 +87,24 @@ input:focus {
     font-size: 2rem;
 }
 
+/*Some hacks to insert a good-looking strikethrough*/
+del {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+del::before {
+    content: '';
+    border-bottom: 2px solid navy;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+/*^^^Some hacks to insert a good-looking strikethrough*/
+
+
 button {
     margin-left: 1rem;
     border: black 1.5px solid;
@@ -86,10 +114,27 @@ button {
     font-size: 1rem;
     padding: .5rem .75rem;
     font-family: 'Mukta', sans-serif;
+    transition: box-shadow .5s;
 }
 
-button:focus {
+button:hover, button:focus, .burger-input:focus, .burger-submit:hover {
     outline: none;
     box-shadow: 1px 1px 5px black;
 }
 
+.burger-submit:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+footer {
+    background: white;
+    padding: 3rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

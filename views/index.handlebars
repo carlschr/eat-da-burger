@@ -2,8 +2,9 @@
 
 <img alt='burger dancing' src='https://i.giphy.com/media/3oEdv5S8Th6b9gsNqM/giphy.gif?cid=ecf05e47gghn80ul4sekajda7ab51j08q28g4ptxrgpvp07l&rid=giphy.gif'/>
 
-<form>
-    <input type="text" name="burger" placeholder="New Burger Goes Here!"/>
+<form autocomplete='off'>
+    <input class='burger-input' type="text" name="burger" placeholder="New Burger Goes Here!"/>
+    <input class='burger-submit' type='submit' value='Submit Ya Burger!'/>
 </form>
 
 <div class="container">
@@ -21,9 +22,11 @@
         {{#each data}}
             {{#if devoured}}
                 <li class="devoured">
-                    <h1>{{burger_name}}</h1>
+                    <h1><del>{{burger_name}}</del></h1>
                 </li>
             {{/if}}
         {{/each}}
     </ul>
 </div>
+
+<footer><p>&copy; <a href='github.com/carlschr'>Christopher Carlson</a></p></footer>

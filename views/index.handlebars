@@ -1,8 +1,13 @@
-<link rel="stylesheet" href='/assets/css/reset.css'/>
-<link rel="stylesheet" href='/assets/css/style.css'/>
+<h1 class='brand-name'>Eat Da Burger!</h1>
+
+<img alt='burger dancing' src='https://i.giphy.com/media/3oEdv5S8Th6b9gsNqM/giphy.gif?cid=ecf05e47gghn80ul4sekajda7ab51j08q28g4ptxrgpvp07l&rid=giphy.gif'/>
+
+<form>
+    <input type="text" name="burger" placeholder="New Burger Goes Here!"/>
+</form>
 
 <div class="container">
-    <ul>
+    <ul class="notdevoured-container">
         {{#each data}}
             {{#unless devoured}}
                 <li class="not-devoured">
@@ -12,7 +17,7 @@
             {{/unless}}
         {{/each}}
     </ul>
-    <ul>
+    <ul class="devoured-container">
         {{#each data}}
             {{#if devoured}}
                 <li class="devoured">

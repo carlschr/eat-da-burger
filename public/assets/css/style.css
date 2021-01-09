@@ -1,22 +1,72 @@
 :root {
     box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+    background: #ffde00;
+    padding-bottom: 0;
 }
 
-.devoured {
-    background: rgb(153, 51, 51);
+.brand-name {
+    font-size: 5rem;
+    text-align: center;
+    background: rgb(236, 233, 191);
+    border: 1px rgb(236, 233, 191) solid;
+    box-shadow: 2px 2px 5px 5px;
+    width: 40%;
+    margin: 2rem auto;
+    padding: 2rem;
 }
 
-.not-devoured {
-    background: rgba(131, 174, 238, 0.959);
+img {
+    width: 20rem;
+    height: 20rem;
+    margin-left: calc(50% - 10rem);
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+input {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: .5rem;
+    box-shadow: 1px 1px 5px grey;
+    border: black 1.5px solid;
+    transition: box-shadow .5s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px black;
 }
 
 .container {
     display: flex;
+    border-top: 2px solid black;
 }
 
 .container>* {
     flex-grow: 1;
     max-width: 50%;
+}
+
+.notdevoured-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(131, 238, 167, 0.959);
+    border-right: 1px solid black;
+}
+
+.devoured-container {
+    background: rgb(190, 96, 96);
+    border-left: 1px solid black;
 }
 
 .devoured, .not-devoured {
@@ -34,10 +84,12 @@ button {
     box-shadow: 1px 1px 5px grey;
     background:white;
     font-size: 1rem;
-    padding: .5rem;
+    padding: .5rem .75rem;
+    font-family: 'Mukta', sans-serif;
 }
 
 button:focus {
     outline: none;
     box-shadow: 1px 1px 5px black;
 }
+

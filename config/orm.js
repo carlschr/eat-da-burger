@@ -1,22 +1,22 @@
 const connection = require('./connection');
 
 module.exports = {
-    selectAll() {
+    selectAll(cb) {
         connection.query('SELECT * FROM burgers', (err, data) => {
             if (err) console.error(err);
-            return data;
+            cb(data);
         });
     },
-    insertOne(burgerData) {
+    insertOne(burgerData, cb) {
         connection.query('INSERT INTO burger (burger_name, devoured) VALUES (?, ?)', [burgerData.name, burgerData.devoured], (err, data) => {
             if (err) console.error(err);
-            return data;
+            cb(data);
         });
     },
-    updateOne(burgerID) {
-        connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [FALSE, burgerID], (err, data) => {
+    updateOne(burgerID, cb) {
+        connection.query('UPDATE burgers SET devoured = ? WHERE id = ?', [false, burgerID], (err, data) => {
             if (err) console.error(err);
-            return data;
+            cb(data);
         });
     }
 };
